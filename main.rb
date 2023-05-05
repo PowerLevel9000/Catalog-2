@@ -8,8 +8,10 @@ class Main
     @options = {
       '1' => :list_all_books,
       '2' => :list_all_labels,
-      '3' => :create_a_book,
-      '4' => :exit_and_save
+      '3' => :list_all_music,
+      '4' => :create_a_book,
+      '5' => :create_a_music,
+      '6' => :exit_and_save
     }
   end
 
@@ -41,8 +43,10 @@ class Main
     puts "\n========== Choose An Option ==========\n\n"
     puts "1. List all books"
     puts "2. List all labels"
-    puts "3. Create A book"
-    puts "4. Exit and Save "
+    puts "3. List all music"
+    puts "4. Create A book"
+    puts "5. Create A music"
+    puts "6. Exit and Save "
   end  
 end
 main = Main.new

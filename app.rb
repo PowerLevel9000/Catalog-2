@@ -1,11 +1,14 @@
 require './classes/book'
 require './classes/label'
+require './classes/music'
+require './classes/genre'
 require './classes/data-controller/reader_writer'
 
 class App
     def initialize
         @books = read_from_json_file("./data/book.json", Book)
         @labels = read_from_json_file("./data/label.json", Label)
+        @musics = read_from_json_file("./data/music.json", Music)
     end
 
     def list_all_books
@@ -14,6 +17,10 @@ class App
 
     def list_all_labels
         class_lister(@labels, "Labels")
+    end
+
+    def list_all_music 
+        class_lister(@musics, "Music")
     end
     
     def create_a_book

@@ -13,7 +13,10 @@ class Book < Item
             'id' => id,
             'publisher' => @publisher,
             'cover_state' => @cover_state,
-            'publish_date' => @publish_date
+            'publish_date' => @publish_date,
+            'archived' => @archived,
+            'lable' => @label,
+            'genre' => @genre
         }.to_json(*args)
     end
     
@@ -21,6 +24,9 @@ class Book < Item
         data = JSON.parse(json)
         book = Book.new(data['publisher'], data['cover_state'], data['publish_date'])
         book.instance_variable_set(:@id, data['id'])
+        book.instance_variable_set(:@lable, data['lable'])
+        book.instance_variable_set(:@genre, data['genre'])
+        book.instance_variable_set(:@archived, data['archived'])
         book
     end
 

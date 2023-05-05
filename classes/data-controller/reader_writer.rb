@@ -16,6 +16,10 @@ def read_from_json_file(file_path, class_name)
 end
 
 def class_lister(class_instances, title)
+    if class_instances.length == 0
+      puts "\n-----------------------\n nothing at the moment \n-----------------------\n"
+      return
+    end
     all_attributes = []
     all_instances = []
     
@@ -35,4 +39,4 @@ def class_lister(class_instances, title)
       t.rows = all_instances
     end
     puts table
-  end
+end
