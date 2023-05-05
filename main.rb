@@ -37,19 +37,19 @@ class Main
   def putters
     puts "\n****************************************"
     puts "\n========== Welcome To Catalog ==========\n\n"
-    puts "****************************************"
+    puts '****************************************'
   end
 
   def putter_ui
     puts "\n========== Choose An Option ==========\n\n"
-    puts "1. List all books"
-    puts "2. List all labels"
-    puts "3. List all music"
-    puts "4. List all genre"
-    puts "5. Create A book"
-    puts "6. Create A music"
-    puts "7. Exit and Save "
-  end  
+    puts '1. List all books'
+    puts '2. List all labels'
+    puts '3. List all music'
+    puts '4. List all genre'
+    puts '5. Create A book'
+    puts '6. Create A music'
+    puts '7. Exit and Save '
+  end
 end
 main = Main.new
 main.ui_genrator

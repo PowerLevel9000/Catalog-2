@@ -2,31 +2,35 @@ require_relative 'item'
 class Music < Item
   attr_accessor :on_spotify
 
-  def initialize(on_spotify, publish_date = 'Unknown')
+  def initialize(on_spotify, publish_date)
     super(publish_date)
     @on_spotify = on_spotify
   end
 
-	def to_json(*args)
-		{
-			'id' => @id,
-			'on_spotify' => @on_spotify,
-			'publish_date' => @publish_date,
-			'label' => @label,
-			'archived' => @archived,
-			'genre' => @genre
-		}.to_json(*args)
-	end
-	
-	def self.from_json(json)
-		data = JSON.parse(json)
-		music = Music.new(data['publisher'], data['cover_state'], data['publish_date'])
-        music.instance_variable_set(:@id, data['id'])
-        music.instance_variable_set(:@lable, data['lable'])
-        music.instance_variable_set(:@genre, data['genre'])
-        music.instance_variable_set(:@archived, data['archived'])
-		music
-	end
+  def to_json(*args)
+    {
+      'id' => @id,
+      'on_spotify' => @on_spotify,
+      'publish_date' => @publish_date,
+      'label' => @label,
+      'archived' => @archived,
+      'source' => @source,
+      'author' => @author,
+      'genre' => @genre
+    }.to_json(*args)
+  end
+
+  def self.from_json(json)
+    data = JSON.parse(json)
+    music = Music.new(data['on_spotify'], data['publish_date'])
+    music.instance_variable_set(:@id, data['id'])
+    music.instance_variable_set(:@label, data['label'])
+    music.instance_variable_set(:@genre, data['genre'])
+    music.instance_variable_set(:@source, data['source'])
+    music.instance_variable_set(:@author, data['author'])
+    music.instance_variable_set(:@archived, data['archived'])
+    music
+  end
 
   private
 
