@@ -25,7 +25,7 @@ class Genre
     data = JSON.parse(json)
     genre = Genre.new(data['name'])
     genre.instance_variable_set(:@id, data['id'])
-    genre.instance_variable_set(:@id, data['items'])
+    genre.instance_variable_set(:@items, data['items'])
     genre
   end
 end

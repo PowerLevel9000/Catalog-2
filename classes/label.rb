@@ -9,7 +9,7 @@ class Label
   end
 
   def add_item(item)
-    item.label = id
+    item.label = @id
     @items << item.id unless @items.include?(item.id)
   end
 

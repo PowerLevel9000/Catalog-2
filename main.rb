@@ -10,9 +10,13 @@ class Main
       '2' => :list_all_labels,
       '3' => :list_all_music,
       '4' => :list_all_genre,
-      '5' => :create_a_book,
-      '6' => :create_a_music,
-      '7' => :exit_and_save
+      '5' => :list_all_game,
+      '6' => :list_all_author,
+      '7' => :list_all_source,
+      '8' => :list_all_movie,
+      '9' => :create_a_book,
+      '10' => :create_a_music,
+      '11' => :exit_and_save
     }
   end
 
@@ -20,7 +24,7 @@ class Main
     app = App.new
     breaker = 0
     putters
-    while breaker != 7
+    while breaker != 11
       putter_ui
       user_input = Readline.readline('Enter option: ', true)
       breaker = user_input.to_i
@@ -42,13 +46,17 @@ class Main
 
   def putter_ui
     puts "\n========== Choose An Option ==========\n\n"
-    puts '1. List all books'
-    puts '2. List all labels'
-    puts '3. List all music'
-    puts '4. List all genre'
-    puts '5. Create A book'
-    puts '6. Create A music'
-    puts '7. Exit and Save '
+    puts '1. List all Books'
+    puts '2. List all Labels'
+    puts '3. List all Music'
+    puts '4. List all Genre'
+    puts '5. List all Game'
+    puts '6. List all Author'
+    puts '7. List all Source'
+    puts '8. List all Movie'
+    puts '9. Create A book'
+    puts '8. Create A music'
+    puts '11. Exit and Save '
   end
 end
 main = Main.new

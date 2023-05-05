@@ -6,7 +6,7 @@ class Source
   end
 
   def add_item(item)
-    item.label = id
+    item.source = @id
     @items << item.id unless @items.include?(item.id)
   end
 
@@ -20,9 +20,9 @@ class Source
 
   def self.from_json(json)
     data = JSON.parse(json)
-    label = Label.new(data['name'])
-    label.instance_variable_set(:@id, data['id'])
-    label.instance_variable_set(:@items, data['items'])
-    label
+    source = Source.new(data['name'])
+    source.instance_variable_set(:@id, data['id'])
+    source.instance_variable_set(:@items, data['items'])
+    source
   end
 end
