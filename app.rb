@@ -9,6 +9,11 @@ class App
         @books = read_from_json_file("./data/book.json", Book)
         @labels = read_from_json_file("./data/label.json", Label)
         @musics = read_from_json_file("./data/music.json", Music)
+        @genres = read_from_json_file("./data/genre.json", Genre)
+        @musics = read_from_json_file("./data/music.json", Music)
+        @authors = read_from_json_file("./data/genre.json", Author)
+        @musics = read_from_json_file("./data/music.json", Music)
+        @sources = read_from_json_file("./data/genre.json", Source)
     end
 
     def list_all_books
@@ -21,6 +26,10 @@ class App
 
     def list_all_music 
         class_lister(@musics, "Music")
+    end
+
+    def list_all_genre 
+        class_lister(@genres, "Genre")
     end
     
     def create_a_book
@@ -36,12 +45,17 @@ class App
         label = create_label
         label.add_item(book)
         @labels << label
+        genre = create_genre
+        genre.add_item(book)
+        @genres << genre
         puts 'Book added successfully!'
     end
 
     def exit_and_save
         write_to_json_file("./data/book.json", @books)
         write_to_json_file("./data/label.json", @labels)
+        write_to_json_file("./data/music.json", @musics)
+        write_to_json_file("./data/genre.json", @genres)
         puts "bye bye"
     end
 
@@ -54,5 +68,12 @@ class App
         color = gets.chomp
         label = Label.new(title, color)
         label
+    end
+
+    def create_genre
+        print 'Enter genre: '
+        genre_name = gets.chomp
+        genre = Genre.new(genre_name)
+        genre
     end
 end

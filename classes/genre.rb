@@ -17,6 +17,7 @@ class Genre
 		{
 			'id' => id,
 			'name' => @name,
+			'items' => @items
 		}.to_json(*args)
   end
 
@@ -24,6 +25,7 @@ class Genre
 		data = JSON.parse(json)
 		genre = Genre.new(data['name'])
 		genre.instance_variable_set(:@id, data['id'])
+		genre.instance_variable_set(:@id, data['items'])
 		genre
 	end
 end

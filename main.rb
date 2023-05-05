@@ -9,9 +9,10 @@ class Main
       '1' => :list_all_books,
       '2' => :list_all_labels,
       '3' => :list_all_music,
-      '4' => :create_a_book,
-      '5' => :create_a_music,
-      '6' => :exit_and_save
+      '4' => :list_all_genre,
+      '5' => :create_a_book,
+      '6' => :create_a_music,
+      '7' => :exit_and_save
     }
   end
 
@@ -19,7 +20,7 @@ class Main
     app = App.new
     breaker = 0
     putters
-    while breaker != 4
+    while breaker != 7
       putter_ui
       user_input = Readline.readline('Enter option: ', true)
       breaker = user_input.to_i
@@ -44,9 +45,10 @@ class Main
     puts "1. List all books"
     puts "2. List all labels"
     puts "3. List all music"
-    puts "4. Create A book"
-    puts "5. Create A music"
-    puts "6. Exit and Save "
+    puts "4. List all genre"
+    puts "5. Create A book"
+    puts "6. Create A music"
+    puts "7. Exit and Save "
   end  
 end
 main = Main.new

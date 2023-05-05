@@ -1,6 +1,4 @@
-require_relative './data-controller/reader_writer'
-require_relative 'item'
-class Label < Item
+class Label 
     attr_accessor :title, :color
     def initialize(title, color)
         @id = rand(1..1000)
