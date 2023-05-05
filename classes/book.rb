@@ -2,8 +2,8 @@ require_relative './item'
 
 class Book < Item
     attr_accessor :publisher, :cover_state
-    def initialize(publisher, cover_state, date)
-        super(date)
+    def initialize(publisher, cover_state, publish_date)
+        super(publish_date)
         @publisher = publisher
         @cover_state = cover_state
     end
@@ -12,14 +12,14 @@ class Book < Item
         {
             'id' => id,
             'publisher' => @publisher,
-            'cover' => @cover_state,
-            'date' => @date
+            'cover_state' => @cover_state,
+            'publish_date' => @publish_date
         }.to_json(*args)
     end
     
     def self.from_json(json)
         data = JSON.parse(json)
-        book = Book.new(data['publisher'], data['cover_state'], data['date'])
+        book = Book.new(data['publisher'], data['cover_state'], data['publish_date'])
         book.instance_variable_set(:@id, data['id'])
         book
     end

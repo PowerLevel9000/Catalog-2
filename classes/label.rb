@@ -10,7 +10,7 @@ class Label < Item
     end
 
     def add_item(item)
-        item.label = self
+        item.label = self.id
         @items << item.id unless @items.include?(item.id)
     end
 
@@ -53,4 +53,4 @@ end
 # label4.add_item("new item")
 
 # write_to_json_file([label1, label2], "./data/label.json")
-puts read_from_json_file("./data/label.json", Label)
+# puts read_from_json_file("./data/label.json", Label)
