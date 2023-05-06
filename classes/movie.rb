@@ -3,7 +3,7 @@ require_relative 'item'
 class Movie
   attr_accessor :silet
 
-  def initialize(publish_date, silet = true)
+  def initialize(publish_date, silet: true)
     super(publish_date)
     @silet = silet
   end

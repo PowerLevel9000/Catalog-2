@@ -60,7 +60,7 @@ class Main
     puts '11. Create A Game'
     puts '12. Create A Movie'
     puts '13. Exit And Save '
-    print "Enter your option : "
+    print 'Enter your option : '
   end
 end
 main = Main.new
