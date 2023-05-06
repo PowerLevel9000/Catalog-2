@@ -88,13 +88,13 @@ class App
   def create_a_game
     ui_title('To create Game please enter the following Information')
     publish_date = date_giver(method(:create_a_game))
-    print "Last Played on  : "
+    print 'Last Played on  : '
     last_played_at = Date.parse(gets.chomp)
-    print "Is this game multiplayer ? [Y/N] : "
+    print 'Is this game multiplayer ? [Y/N] : '
     multiplayer = gets.chomp
-    game = ""
-    if multiplayer.downcase == "y"
-      print "Max number of players can play together : "
+    game = ''
+    if multiplayer.downcase == 'y'
+      print 'Max number of players can play together : '
       number = gets.chomp.to_i
       game = Game.new(last_played_at, publish_date, number)
     else
