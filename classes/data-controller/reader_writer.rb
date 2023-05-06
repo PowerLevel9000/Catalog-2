@@ -1,6 +1,9 @@
 require 'json'
 require 'terminal-table'
 def write_to_json_file(file_path, array)
+  if array.length == 0
+    return
+  end
   data = array.map(&:to_json)
   File.write(file_path, JSON.pretty_generate(data))
 end

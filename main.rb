@@ -26,11 +26,10 @@ class Main
     putters
     while breaker != 11
       putter_ui
-      user_input = Readline.readline('Enter option: ', true)
+      user_input = gets.chomp
       breaker = user_input.to_i
-      option = options[user_input[-1]]
-      if option
-        app.send(option)
+      if breaker <= 11 && breaker >= 1
+        app.send(@options[user_input])
         puts "\n// task end //\n\n"
       else
         puts 'Choose valid option.'
