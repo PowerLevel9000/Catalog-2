@@ -22,7 +22,7 @@ class Music < Item
 
   def self.from_json(json)
     data = JSON.parse(json)
-    music = Music.new(data['on_spotify'], data['publish_date'])
+    music = Music.new(data['publish_date'], on_spotify: data['on_spotify'])
     music.instance_variable_set(:@id, data['id'])
     music.instance_variable_set(:@label, data['label'])
     music.instance_variable_set(:@genre, data['genre'])

@@ -16,7 +16,7 @@ class App
     @genres = read_from_json_file('./data/genre.json', Genre)
     @games = read_from_json_file('./data/game.json', Game)
     @authors = read_from_json_file('./data/author.json', Author)
-    @movies = read_from_json_file('./data/movies.json', Movie)
+    @movies = read_from_json_file('./data/movie.json', Movie)
     @sources = read_from_json_file('./data/source.json', Source)
   end
 
@@ -79,7 +79,7 @@ class App
     publish_date = date_giver(method(:create_a_music))
     print "Is it on 'Spotify' [Y/N] : "
     on_spotify = gets.chomp
-    music = on_spotify.downcase == 'n' ? Music.new(publish_date, false) : Music.new(publish_date)
+    music = on_spotify.downcase == 'n' ? Music.new(publish_date, on_spotify: false) : Music.new(publish_date)
     @musics << music
     symbol_controler(music)
     ui_title('Music Created successfully!')
@@ -110,7 +110,7 @@ class App
     publish_date = date_giver(method(:create_a_movie))
     print "Is it on 'Silet' [Y/N] : "
     silet = gets.chomp
-    movie = silet.downcase == 'n' ? Movie.new(publish_date, false) : Movie.new(publish_date)
+    movie = silet.downcase == 'n' ? Movie.new(publish_date, silet: false) : Movie.new(publish_date)
     @movies << movie
     symbol_controler(movie)
     ui_title('Movie Created successfully!')

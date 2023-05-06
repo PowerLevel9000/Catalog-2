@@ -1,6 +1,6 @@
 require_relative 'item'
 
-class Movie
+class Movie < Item
   attr_accessor :silet
 
   def initialize(publish_date, silet: true)
@@ -23,7 +23,7 @@ class Movie
 
   def self.from_json(json)
     data = JSON.parse(json)
-    movie = Movie.new(data['silet'], data['publish_date'])
+    movie = Movie.new(data['publish_date'], silet: data['silet'])
     movie.instance_variable_set(:@id, data['id'])
     movie.instance_variable_set(:@label, data['label'])
     movie.instance_variable_set(:@genre, data['genre'])
