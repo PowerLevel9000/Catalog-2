@@ -57,8 +57,8 @@ class App
     string.length.times do
       line += "-"
     end
-    line += "\n"
-    puts "#{line}#{string}#{line}"
+    line += "--+\n"
+    puts "#{line}| #{string} |#{line}\n"
   end
 
   def create_a_book
@@ -72,7 +72,17 @@ class App
     book = Book.new(publisher, cover_state, publish_date)
     @books << book
     symbol_controler(book)
-    puts 'Book added successfully!'
+    ui_title("Book Created successfully!")
+  end
+
+  def create_a_music
+    ui_title("To create Music please enter the following Information")
+  end
+  def create_a_game
+    ui_title("To create Game please enter the following Information")
+  end
+  def create_a_movie
+    ui_title("To create Movie please enter the following Information")
   end
 
   def exit_and_save
@@ -84,7 +94,7 @@ class App
     write_to_json_file('./data/source.json', @sources)
     write_to_json_file('./data/game.json', @games)
     write_to_json_file('./data/movie.json', @movies)
-    puts 'bye bye'
+    ui_title("Bye Bye")
   end
 
   private
@@ -96,7 +106,7 @@ class App
     color = gets.chomp
     label = Label.new(title, color)
     @labels << label
-    ui_title("Label #{title} with #{color} Created successfully")
+    ui_title("Label #{title.upcase} with color #{color.upcase} Created successfully!")
     label
   end
 
@@ -105,6 +115,7 @@ class App
     genre_name = gets.chomp
     genre = Genre.new(genre_name)
     @genres << genre
+    ui_title("Genre #{genre_name.upcase} Created successfully!")
     genre
   end
 
@@ -113,16 +124,18 @@ class App
     name = gets.chomp
     source = Source.new(name)
     @sources << source
+    ui_title("Source #{name.upcase} Created successfully!")
     source
   end
 
   def create_author
-    print 'Enter Author First Name'
+    print 'Enter Author First Name : '
     first_name = gets.chomp
-    print 'Enter Author Last Name'
+    print 'Enter Author Last Name : '
     last_name = gets.chomp
     author = Author.new(first_name, last_name)
     @authors << author
+    ui_title("Author #{first_name.upcase} #{last_name.upcase} Created successfully!")
     author
   end
 
@@ -146,7 +159,7 @@ class App
   end
 
   def option_giver(class_instance_array, class_title, symbol_fun_creator)
-    puts "Select #{class_title} by ID or Create #{class_title}"
+    ui_title("Select #{class_title} by ID or Create #{class_title}")
     class_lister(class_instance_array, class_title)
     puts "1. Select by Id"
     puts "2. Creat a new one"
@@ -157,12 +170,38 @@ class App
       id = gets.chomp.to_i
       return finder(class_instance_array, id)
     elsif option == 2
-      puts "Enter following data Correctly to create #{class_title}"
+      ui_title("Enter following data Correctly to create #{class_title}")
       return symbol_fun_creator.call
     else
       puts "\n/\/\ Invalid input /\/\\n"
-      puts "try again"
+      ui_title("Try Again")
       return option_giver(class_instance_array, class_title, symbol_fun_creator)
     end
+  end
+
+  def class_lister(class_instances, title)
+    if class_instances.empty?
+      ui_title("nothing at the moment")
+      return
+    end
+    all_attributes = []
+    all_instances = []
+  
+    class_instances.each do |class_instance|
+      instance_variables = class_instance.instance_variables
+      instance_values = instance_variables.map { |var| class_instance.instance_variable_get(var) }
+  
+      all_attributes.concat(instance_variables.map { |var| var.to_s.gsub('@', '') })
+      all_instances << instance_values
+    end
+  
+    all_attributes.uniq!
+  
+    table = Terminal::Table.new do |t|
+      t.title = "#{title} table of content"
+      t.headings = all_attributes
+      t.rows = all_instances
+    end
+    puts table
   end
 end

@@ -16,7 +16,9 @@ class Main
       '8' => :list_all_movie,
       '9' => :create_a_book,
       '10' => :create_a_music,
-      '11' => :exit_and_save
+      '11' => :create_a_game,
+      '12' => :create_a_movie,
+      '13' => :exit_and_save
     }
   end
 
@@ -24,11 +26,11 @@ class Main
     app = App.new
     breaker = 0
     putters
-    while breaker != 11
+    while breaker != 13
       putter_ui
       user_input = gets.chomp
       breaker = user_input.to_i
-      if breaker <= 11 && breaker >= 1
+      if breaker <= 13 && breaker >= 1
         app.send(@options[user_input])
         puts "\n// task end //\n\n"
       else
@@ -45,17 +47,20 @@ class Main
 
   def putter_ui
     puts "\n========== Choose An Option ==========\n\n"
-    puts '1. List all Books'
-    puts '2. List all Labels'
-    puts '3. List all Music'
-    puts '4. List all Genre'
-    puts '5. List all Game'
-    puts '6. List all Author'
-    puts '7. List all Source'
-    puts '8. List all Movie'
-    puts '9. Create A book'
-    puts '8. Create A music'
-    puts '11. Exit and Save '
+    puts '1.  List All Books'
+    puts '2.  List All Labels'
+    puts '3.  List All Music'
+    puts '4.  List All Genre'
+    puts '5.  List All Game'
+    puts '6.  List All Author'
+    puts '7.  List All Source'
+    puts '8.  List All Movie'
+    puts '9.  Create A Book'
+    puts '10. Create A Music'
+    puts '11. Create A Game'
+    puts '12. Create A Movie'
+    puts '13. Exit And Save '
+    print "Enter your option : "
   end
 end
 main = Main.new
