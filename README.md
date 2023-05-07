@@ -159,6 +159,7 @@ rspec spec
 - [ ] **New connection**
 - [ ] **New user interface**
 - [ ] **Advance database**
+- [ ] **Advance Search through symbol like author and source**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
