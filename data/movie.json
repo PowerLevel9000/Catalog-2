@@ -1,4 +1,5 @@
 [
   "{\"id\":488,\"silet\":false,\"publish_date\":\"2023-05-05\",\"label\":null,\"archived\":false,\"source\":873,\"author\":632,\"genre\":520}",
-  "{\"id\":680,\"silet\":false,\"publish_date\":\"2022-10-30\",\"label\":774,\"archived\":false,\"source\":873,\"author\":null,\"genre\":null}"
+  "{\"id\":680,\"silet\":false,\"publish_date\":\"2022-10-30\",\"label\":774,\"archived\":false,\"source\":873,\"author\":null,\"genre\":null}",
+  "{\"id\":84,\"silet\":true,\"publish_date\":\"2023-01-01\",\"label\":null,\"archived\":false,\"source\":null,\"author\":null,\"genre\":null}"
 ]
