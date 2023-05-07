@@ -1,5 +1,7 @@
 [
-  "{\"id\":325,\"name\":\"God Of War\",\"items\":[341,738]}",
+  "{\"id\":325,\"name\":\"God Of War\",\"items\":[341,738,94]}",
   "{\"id\":954,\"name\":\"Dreamer\",\"items\":[176]}",
-  "{\"id\":873,\"name\":\"Kerla The Untold Story\",\"items\":[488]}"
+  "{\"id\":873,\"name\":\"Kerla The Untold Story\",\"items\":[488,680]}",
+  "{\"id\":283,\"name\":\"The voice of the night\",\"items\":[568]}",
+  "{\"id\":159,\"name\":\"Hero\",\"items\":[241,451]}"
 ]

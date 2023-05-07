@@ -149,7 +149,7 @@ rspec spec
 
 ## Video Presentation for our project
 
- under construction .........
+<a href= "https://youtu.be/B6h-FqIgY6c">presentation video 🧑‍💻🧑‍💻</a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- FUTURE FEATURES -->
