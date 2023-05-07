@@ -135,8 +135,6 @@ class App
   #   else
   #     class_lister(@Label, "Label")
   #   end
-
-
   # end
 
   def exit_and_save
