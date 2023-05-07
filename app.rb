@@ -116,6 +116,29 @@ class App
     ui_title('Movie Created successfully!')
   end
 
+  # def search_by_symbol
+  #   puts "1. Search by Source"
+  #   puts "2. Search by Genre"
+  #   puts "3. Search by Author"
+  #   puts "4. Search by Label"
+  #   user_input = gets.chomp.to_i
+  #   ui_title("Chosse symbol by ID to list there Items")
+  #   case user_input
+  #   when 1
+  #     class_lister(@sources, "Source")
+  #     symbol_id = gets.chomp
+  #     finder(@sources)
+  #   when 2
+  #     class_lister(@Genres, "Genre")
+  #   when 3
+  #     class_lister(@Author, "Author")
+  #   else
+  #     class_lister(@Label, "Label")
+  #   end
+    
+    
+  # end
+
   def exit_and_save
     write_to_json_file('./data/book.json', @books)
     write_to_json_file('./data/label.json', @labels)

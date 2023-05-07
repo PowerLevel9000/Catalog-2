@@ -1,3 +1,4 @@
 [
-  "{\"id\":738,\"last_played_at\":1,\"multiplayer\":\"2016-06-16\",\"publish_date\":\"2023-05-01\",\"archived\":false,\"label\":null,\"genre\":520,\"source\":null,\"author\":null}"
+  "{\"id\":738,\"last_played_at\":\"2016-06-16\",\"multiplayer\":\"2023-05-01\",\"publish_date\":1,\"archived\":false,\"label\":null,\"genre\":520,\"source\":null,\"author\":null}",
+  "{\"id\":94,\"last_played_at\":\"2023-05-01\",\"multiplayer\":1,\"publish_date\":\"2023-02-21\",\"archived\":false,\"label\":247,\"genre\":520,\"source\":325,\"author\":601}"
 ]
