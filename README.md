@@ -209,7 +209,7 @@ and my collaborator for Catalog
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./LICENSE) licensed.
+This project is [GPL-3.0 license](./LICENSE) licensed.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
