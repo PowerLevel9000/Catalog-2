@@ -1,4 +1,5 @@
 require './classes/item'
 require './classes/book'
+require './classes/author'
 require './hello'
 require 'yaml'
