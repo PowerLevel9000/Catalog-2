@@ -16,6 +16,7 @@ describe Movie do
     end
 
     it "Movie can be archived since it have cover state bad" do
-        expect(movie.move_to_archive).to be_truthy
+      movie.move_to_archive
+      expect(movie.archived).to be_truthy
     end
 end

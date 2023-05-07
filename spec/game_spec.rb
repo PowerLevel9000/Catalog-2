@@ -16,6 +16,7 @@ describe Game do
     end
 
     it "Game can't be archive since recently played" do
-        expect(game.move_to_archive).to be_falsy
+        game.move_to_archive
+        expect(game.archived).to be_falsy
     end
 end

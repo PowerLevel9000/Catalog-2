@@ -7,7 +7,7 @@ describe Source do
         expect(source).to be_instance_of(Source)
     end
 
-    it "Source should return Title" do
+    it "Source should return Name" do
         la = "#{source.name}"
         expect(la).to eq("Romantic")
     end

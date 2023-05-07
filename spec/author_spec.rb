@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Author do
     let(:author) {Author.new("Adarsh", "Pathak")}
     let(:item) {Item.new("2000/10/10")}
-    it "Auther instance can be created" do
+    it "Author instance can be created" do
         expect(author).to be_instance_of(Author)
     end
 

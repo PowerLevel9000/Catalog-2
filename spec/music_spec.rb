@@ -7,7 +7,7 @@ describe Music do
     expect(music).to be_instance_of(Music)
   end
 
-      it "Music should return silet false" do
+      it "Music should return on spotify false" do
         expect(music.on_spotify).to be_falsy
     end
 
