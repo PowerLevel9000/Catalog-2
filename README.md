@@ -3,6 +3,7 @@
 <div align = "center">
   <img src="./personal-branding/adarsh-logo.png" alt="logo" width="140"  height="auto" />
 </div>
+
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
