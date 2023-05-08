@@ -141,7 +141,6 @@ rspec spec
 - Twitter: [@PowerLevel9002](https://twitter.com/PowerLevel9002)
 - LinkedIn: [Adarsh pathak](https://linkedin.com/in/PowerLevel)
 
-👤 **Leslie Aine**
 
 
 
